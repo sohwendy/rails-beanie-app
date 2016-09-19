@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyWebHats</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <main>
+      <div class="container">
+        <% if notice %>
+          <script>
+            $(function() {
+              Materialize.toast('<%= notice %>', 2000);
+            });
+          </script>
+        <% end %>
+        <%= yield %>
+      </div>
+    </main>
+    <%= render 'layouts/footer' %>
+  </body>
+
+  <%= javascript_include_tag "materialize_date"%>
+
+</html>

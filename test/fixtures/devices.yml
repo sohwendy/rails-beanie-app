@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Exploding
+  manufacturer: Samsung
+  model: Galaxy
+  operating_system: Android
+  users: ['ux']
+  udid: 123
+  purchase_date: 2016-09-15
+
+two:
+  name: Fragile
+  manufacturer: Apple
+  model: iPhone
+  operating_system: ios
+  users: ['ux']
+  udid: 456
+  purchase_date: 2016-09-15

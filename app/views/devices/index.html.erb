@@ -1,0 +1,40 @@
+<h1>Devices Record App</h1>
+
+<div class="row">
+  <%= render_button_link('add', 'Add New Device', new_device_path, style: 'right') %>
+</div>
+<div class="row">
+  <table class="mdl-data-table mdl-js-data-table highlight">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th colspan="2" class="mdl-data-table__cell--non-numeric">Name</th>
+        <th class="mdl-data-table__cell--non-numeric">Manufacturer</th>
+        <th class="mdl-data-table__cell--non-numeric">Model</th>
+        <th class="mdl-data-table__cell--non-numeric">OS</th>
+        <th class="mdl-data-table__cell--non-numeric">Users</th>
+        <th>Purchase date</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @devices.each_with_index do |device, index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td colspan="2" class="mdl-data-table__cell--non-numeric"><%= device.name %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= device.manufacturer %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= device.model %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= display_os(device) %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= display_users(device) %></td>
+          <td><%= display_purchase_date(device) %></td>
+          <td><%= render_icon_link('description', device, style: 'right-align') %></td>
+          <td><%= render_icon_link('mode_edit', edit_device_path(device), style: 'right-align') %></td>
+          <td><%= render_delete_link(device, style: 'center-align') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,94 @@
+<%= form_for(device) do |f| %>
+  <% if device.errors.any? %>
+    <div class="card red lighten-2">
+      <div class="card-content">
+        <span class="card-title">Save failed...</span>
+        <% device.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="field input-field">
+      <%= f.text_field :name %>
+      <%= f.label :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field input-field">
+      <%= f.select :manufacturer, select_brand, disabled: 'Select One', selected: 'Select One' %>
+      <%= f.label :Manufacturer %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field input-field">
+      <%= f.label :model %>
+      <%= f.text_field :model %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field input-field">
+      <%= f.label :operating_system %>
+      <br>
+      <%= f.collection_radio_buttons(:operating_system, Device::OSS, :first, :last) do |b| %>
+        <p>
+          <%= b.radio_button(class: 'with-gap') %>
+          <%= b.label %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field input-field">
+      <%= f.label :users %>
+      <br>
+      <%= f.collection_check_boxes(:users, Device::USERS, :first, :last) do |b| %>
+        <p>
+          <%= b.check_box(class: 'filled-in') %>
+          <%= b.label %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="field input-field">
+      <%= f.label :purchase_date %>
+      <%= f.date_field :purchase_date, class: "datepicker" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field input-field">
+      <%= f.label :udid %>
+      <%= f.text_field :udid %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field file-field input-field">
+      <div class="btn indigo">
+        <span><i class="material-icons left">attach_file</i>Attach File</span>
+        <%= f.file_field :photo %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </div>
+
+  <div class="row navigation">
+    <%= render_button_link('undo', 'Cancel', devices_path) %>
+    <%= f.button :submit, class: 'btn btn-large waves-effect waves-light right' do %>
+      <i class="material-icons left">save</i>Save
+    <% end %>
+  </div>
+<% end %>
