@@ -1,0 +1,58 @@
+<h1>View Device</h1>
+
+<div class="row">
+  <div class="col s4">
+    <p class="flow-text">
+      <% if @device.photo %>
+        <%= image_tag @device.photo.url(:medium), class: 'materialboxed right' %>
+      <% else %>
+        <strong>Image:</strong> 
+        <strong>No Image</strong>
+      <% end %>
+     </p>
+  </div>
+
+  <div class="col s7 push-s1">
+
+    <p class="flow-text">
+      <strong>Name:</strong>
+      <%= @device.name %>
+    </p>
+
+    <p class="flow-text">
+      <strong>Manufacturer:</strong>
+      <%= @device.manufacturer %>
+    </p>
+
+    <p class="flow-text">
+      <strong>Model:</strong>
+      <%= @device.model %>
+    </p>
+
+    <p class="flow-text">
+      <strong>Operating system:</strong>
+      <%= display_os(@device) %>
+    </p>
+
+    <p class="flow-text">
+      <strong>Users:</strong>
+      <%= display_users(@device)%>
+    </p>
+
+    <p class="flow-text">
+      <strong>Udid:</strong>
+      <%= @device.udid %>
+    </p>
+
+    <p class="flow-text">
+      <strong>Purchase date:</strong>
+      <%= display_purchase_date(@device) %>
+    </p>
+
+  </div>
+</div>
+
+<div class="row navigation">
+  <%= render_button_link('view_list', 'Back to Listing', devices_path) %>
+  <%= render_button_link('edit', 'Edit', edit_device_path(@device), style: 'right') %>
+</div>
