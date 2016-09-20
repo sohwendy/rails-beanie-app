@@ -6,5 +6,5 @@ class Device < ApplicationRecord
   has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
-  validates :name, :manufacturer, :model, :operating_system, :users, :udid, :purchase_date, presence: true
+  validates :name, :brand, :model, :operating_system, :users, :udid, :purchase_date, presence: true
 end

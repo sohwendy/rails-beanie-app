@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160915033946) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "name"
-    t.string   "manufacturer"
+    t.string   "brand"
     t.string   "model"
     t.string   "operating_system"
     t.string   "users",              default: [],              array: true

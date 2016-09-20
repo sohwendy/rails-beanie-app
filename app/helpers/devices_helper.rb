@@ -13,12 +13,21 @@ module DevicesHelper
   end
 
   def display_purchase_date device
-    device.purchase_date ? device.purchase_date.strftime("%d %b %Y") : '-'
+    #device.purchase_date
+    device.purchase_date ? device.purchase_date.strftime("%d %b %Y") : nil
   end
 
+  def display_photo device
+    p device.photo_file_name
+    device.photo_file_name
+  end
 
   def select_brand
     ['Select One'] + Device::BRAND
+  end
+
+  def selected_brand device
+    device.brand || 'Select One'
   end
 
   def render_delete_link(device, options = {})

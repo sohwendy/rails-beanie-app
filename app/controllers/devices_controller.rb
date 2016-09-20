@@ -56,7 +56,7 @@ class DevicesController < ApplicationController
   def destroy
     @device.destroy
     respond_to do |format|
-      format.html { redirect_to devices_url, notice: 'Device was successfully destroyed.' }
+      format.html { redirect_to devices_url, notice: 'Device was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -69,7 +69,7 @@ class DevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
-      params.require(:device).permit(:name, :manufacturer, :model, :operating_system, :udid, :purchase_date,
+      params.require(:device).permit(:name, :brand, :model, :operating_system, :udid, :purchase_date,
                                      :photo, :users, users: [])
     end
 end
