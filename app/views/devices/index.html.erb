@@ -30,9 +30,9 @@
           <td class="mdl-data-table__cell--non-numeric"><%= display_os(device) %></td>
           <td class="mdl-data-table__cell--non-numeric"><%= display_users(device) %></td>
           <td><%= display_purchase_date(device) %></td>
-          <td><%= render_icon_link('description', device, style: 'right-align') %></td>
-          <td><%= render_icon_link('mode_edit', edit_device_path(device), style: 'right-align') %></td>
-          <td><%= render_delete_link(device, style: 'center-align') %></td>
+          <td><%= render_icon_link('description', 'view', device, style: 'right-align') %></td>
+          <td><%= render_icon_link('mode_edit', 'edit', edit_device_path(device), style: 'right-align') %></td>
+          <td><%= render_delete_link(device, 'delete', style: 'center-align') %></td>
         </tr>
       <% end %>
     </tbody>
