@@ -19,8 +19,8 @@
 
   <div class="row">
     <div class="field input-field">
-      <%= f.select :manufacturer, select_brand, disabled: 'Select One', selected: 'Select One' %>
-      <%= f.label :Manufacturer %>
+      <%= f.select :brand, select_brand, disabled: 'Select One', selected: selected_brand(device) %>
+      <%= f.label :brand %>
     </div>
   </div>
 
@@ -62,7 +62,7 @@
   <div class="row">
     <div class="field input-field">
       <%= f.label :purchase_date %>
-      <%= f.date_field :purchase_date, class: "datepicker" %>
+      <%= f.date_field :purchase_date, class: 'datepicker', value: display_purchase_date(device) %>
     </div>
   </div>
 
@@ -80,7 +80,7 @@
         <%= f.file_field :photo %>
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
+        <input class="file-path validate" type="text" value="<%= display_photo(device) %>" >
       </div>
     </div>
   </div>

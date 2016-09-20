@@ -2,17 +2,17 @@
 
 one:
   name: Exploding
-  manufacturer: Samsung
-  model: Galaxy
-  operating_system: Android
+  brand: samsung
+  model: Galaxy 7
+  operating_system: android
   users: ['ux']
   udid: 123
   purchase_date: 2016-09-15
 
 two:
-  name: Fragile
-  manufacturer: Apple
-  model: iPhone
+  name: Hissing
+  brand: apple
+  model: iPhone 7
   operating_system: ios
   users: ['ux']
   udid: 456

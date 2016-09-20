@@ -9,7 +9,7 @@
       <tr>
         <th>No</th>
         <th colspan="2" class="mdl-data-table__cell--non-numeric">Name</th>
-        <th class="mdl-data-table__cell--non-numeric">Manufacturer</th>
+        <th class="mdl-data-table__cell--non-numeric">Brand</th>
         <th class="mdl-data-table__cell--non-numeric">Model</th>
         <th class="mdl-data-table__cell--non-numeric">OS</th>
         <th class="mdl-data-table__cell--non-numeric">Users</th>
@@ -25,7 +25,7 @@
         <tr>
           <td><%= index+1 %></td>
           <td colspan="2" class="mdl-data-table__cell--non-numeric"><%= device.name %></td>
-          <td class="mdl-data-table__cell--non-numeric"><%= device.manufacturer %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= device.brand %></td>
           <td class="mdl-data-table__cell--non-numeric"><%= device.model %></td>
           <td class="mdl-data-table__cell--non-numeric"><%= display_os(device) %></td>
           <td class="mdl-data-table__cell--non-numeric"><%= display_users(device) %></td>
