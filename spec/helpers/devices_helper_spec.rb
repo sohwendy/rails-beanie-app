@@ -25,10 +25,5 @@ RSpec.describe DevicesHelper, type: :helper do
     it 'returns brand selection ' do
       expect(selected_brand(subject)).to eq('samsung')
     end
-
-    it 'returns photo file name'
-    it 'returns render_delete_link'
-    it 'returns render_button_link'
-    it 'returns render_icon_link'
   end
 end
