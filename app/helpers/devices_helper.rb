@@ -1,7 +1,5 @@
 module DevicesHelper
 
-  LARGE_BUTTON_STYLE =
-
   def display_os device
     Device::OSS[device.operating_system.to_sym]
   end
