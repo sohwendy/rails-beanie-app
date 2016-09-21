@@ -1,24 +1,27 @@
-# README
+# Sample App using RoR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Implements web components for experimenting with test framework and tools.
 
-Things you may want to cover:
+## Mac OS (for master and development branch)
 
-* Ruby version
+(1) Install Postgres database
+```sh
+$ brew install postgres
+```
 
-* System dependencies
+(2) Start Postgres
+```sh
+$ pg_ctl -D /usr/local/var/postgres -l logfile start
+```
 
-* Configuration
+## Windows (for window branch)
 
-* Database creation
+(1) Use [RailsInstaller](http://railsinstaller.org/en)
 
-* Database initialization
+(2) Follow [Paperclip](https://github.com/thoughtbot/paperclip) to install ImageMagick and file
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+(3) In command prompt, run
+```sh
+$ gem install rails
+$ gem install bundler
+```
