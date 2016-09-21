@@ -3,7 +3,7 @@ class Device < ApplicationRecord
   OSS = { ios: 'iOS', android: 'Android', others: 'Other OS'}
   BRAND = [['Apple', 'apple'], ['Samsung', 'samsung'], ['LG', 'lg']]
 
-  has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :photo
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   validates :name, :brand, :model, :operating_system, :users, :udid, :purchase_date, presence: true

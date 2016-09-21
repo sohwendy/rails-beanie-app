@@ -4,7 +4,7 @@
   <div class="col s4">
     <p class="flow-text">
       <% if @device.photo %>
-        <%= image_tag @device.photo.url(:medium), class: 'materialboxed right' %>
+        <%= image_tag @device.photo.url, class: 'materialboxed right' %>
       <% else %>
         <strong>Image:</strong> 
         <strong>No Image</strong>
