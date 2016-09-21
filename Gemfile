@@ -13,13 +13,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.0.0'
 gem 'materialize-sass'
 gem 'material_icons'
-gem 'rename'
+gem 'factory_girl_rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
 end
 
 group :development do
