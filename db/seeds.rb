@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'factory_girl_rails'
+
+FactoryGirl.create(:device_one)
+FactoryGirl.create(:device_two)
