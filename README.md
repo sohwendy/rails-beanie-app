@@ -1,8 +1,8 @@
-# Sample App using RoR
+# Sample App developed using RoR
 
-Implements web components for experimenting with test framework and tools.
+Implements web components for experimenting with UI test framework and tools.
 
-## Mac OS (for master and development branch)
+## Mac OS Installation (for master and development branch)
 
 (1) Install Postgres database
 ```sh
@@ -14,7 +14,7 @@ $ brew install postgres
 $ pg_ctl -D /usr/local/var/postgres -l logfile start
 ```
 
-## Windows (for window branch)
+## Windows Installation (for window branch)
 
 (1) Use [RailsInstaller](http://railsinstaller.org/en)
 
@@ -24,4 +24,12 @@ $ pg_ctl -D /usr/local/var/postgres -l logfile start
 ```sh
 $ gem install rails
 $ gem install bundler
+```
+
+## Starting the server
+
+```sh
+$ rails db:migrate:reset
+$ rails db:seed
+$ rails s
 ```
