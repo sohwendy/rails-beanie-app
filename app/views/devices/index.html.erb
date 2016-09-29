@@ -22,9 +22,9 @@
 
     <tbody>
       <% @devices.each_with_index do |device, index| %>
-        <tr>
-          <% row = index+ 1 %>
-          <td ><%= row %></td>
+      <% row = index+ 1 %>
+        <tr id=<%= "row-#{row}" %>>
+          <td id=<%= "col-no-#{row}" %>><%= row %></td>
           <td id=<%= "col-name-#{row}" %> colspan="2" class="mdl-data-table__cell--non-numeric"><%= device.name %></td>
           <td id=<%= "col-brand-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= device.brand %></td>
           <td id=<%= "col-model-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= device.model %></td>
