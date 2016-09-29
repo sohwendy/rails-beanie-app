@@ -29,16 +29,17 @@ module DevicesHelper
 
   def render_delete_link(device, text, options = {})
     style_class = "waves-effect waves-teal #{options[:style]}"
-    id = "link-#{text}"
+    id = options[:id]  || "link-#{text}"
     link_to '<i class="material-icons">delete</i>'.html_safe, device,
             method: :delete,
             data: { confirm: 'Are you sure?' },
-            class: style_class
+            class: style_class,
+            id: id
   end
 
   def render_button_link(icon, text, path, options = {})
     style_class = "btn btn-large waves-effect waves-light #{options[:style]}"
-    id = "link-#{icon}"
+    id = options[:id] || "link-#{icon}"
     link_to "<i class='material-icons left'>#{icon}</i> #{text}".html_safe,
             path,
             class: style_class,
@@ -46,8 +47,8 @@ module DevicesHelper
   end
 
   def render_icon_link(icon, text, path, options = {})
-    id = "link-#{text || icon}"
+    p options
+    id = options[:id] || "link-#{text || icon}"
     link_to "<i class='material-icons'>#{icon}</i>".html_safe, path, class: 'waves-effect waves-teal', id: id
   end
-
 end
