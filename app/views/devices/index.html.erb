@@ -4,7 +4,7 @@
   <%= render_button_link('add', 'Add New Device', new_device_path, style: 'right') %>
 </div>
 <div class="row">
-  <table class="mdl-data-table mdl-js-data-table highlight">
+  <table class="mdl-data-table mdl-js-data-table highlight" id="table-listing">
     <thead>
       <tr>
         <th>No</th>
@@ -23,16 +23,17 @@
     <tbody>
       <% @devices.each_with_index do |device, index| %>
         <tr>
-          <td><%= index+1 %></td>
-          <td colspan="2" class="mdl-data-table__cell--non-numeric"><%= device.name %></td>
-          <td class="mdl-data-table__cell--non-numeric"><%= device.brand %></td>
-          <td class="mdl-data-table__cell--non-numeric"><%= device.model %></td>
-          <td class="mdl-data-table__cell--non-numeric"><%= display_os(device) %></td>
-          <td class="mdl-data-table__cell--non-numeric"><%= display_users(device) %></td>
-          <td><%= display_purchase_date(device) %></td>
-          <td><%= render_icon_link('description', 'view', device, style: 'right-align') %></td>
-          <td><%= render_icon_link('mode_edit', 'edit', edit_device_path(device), style: 'right-align') %></td>
-          <td><%= render_delete_link(device, 'delete', style: 'center-align') %></td>
+          <% row = index+ 1 %>
+          <td ><%= row %></td>
+          <td id=<%= "col-name-#{row}" %> colspan="2" class="mdl-data-table__cell--non-numeric"><%= device.name %></td>
+          <td id=<%= "col-brand-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= device.brand %></td>
+          <td id=<%= "col-model-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= device.model %></td>
+          <td id=<%= "col-os-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= display_os(device) %></td>
+          <td id=<%= "col-users-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= display_users(device) %></td>
+          <td id=<%= "col-date-#{row}" %> ><%= display_purchase_date(device) %></td>
+          <td id=<%= "col-view-#{row}" %> ><%= render_icon_link('description', 'view', device, {style: 'right-align',id: "link-delete-#{row}"}) %></td>
+          <td id=<%= "col-edit-#{row}" %> ><%= render_icon_link('mode_edit', 'edit', edit_device_path(device), {style: 'right-align', id: "link-edit-#{row}"}) %></td>
+          <td id=<%= "col-delete-#{row}" %> ><%= render_delete_link(device, 'delete', {style: 'center-align', id: "link-delete-#{row}"}) %></td>
         </tr>
       <% end %>
     </tbody>
