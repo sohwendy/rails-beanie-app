@@ -31,7 +31,7 @@
           <td id=<%= "col-os-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= display_os(device) %></td>
           <td id=<%= "col-users-#{row}" %> class="mdl-data-table__cell--non-numeric"><%= display_users(device) %></td>
           <td id=<%= "col-date-#{row}" %> ><%= display_purchase_date(device) %></td>
-          <td id=<%= "col-view-#{row}" %> ><%= render_icon_link('description', 'view', device, {style: 'right-align',id: "link-delete-#{row}"}) %></td>
+          <td id=<%= "col-view-#{row}" %> ><%= render_icon_link('description', 'view', device, {style: 'right-align',id: "link-view-#{row}"}) %></td>
           <td id=<%= "col-edit-#{row}" %> ><%= render_icon_link('mode_edit', 'edit', edit_device_path(device), {style: 'right-align', id: "link-edit-#{row}"}) %></td>
           <td id=<%= "col-delete-#{row}" %> ><%= render_delete_link(device, 'delete', {style: 'center-align', id: "link-delete-#{row}"}) %></td>
         </tr>
