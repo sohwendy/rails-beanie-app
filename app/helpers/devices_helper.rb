@@ -27,6 +27,10 @@ module DevicesHelper
     device.brand || 'Select One'
   end
 
+  def selected?(device, value)
+    device.brand === value ? 'selected' : ''
+  end
+
   def render_delete_link(device, text, options = {})
     style_class = "waves-effect waves-teal #{options[:style]}"
     id = options[:id]  || "link-#{text}"

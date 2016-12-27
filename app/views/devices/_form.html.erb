@@ -18,11 +18,19 @@
   </div>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.select :brand, select_brand, disabled: 'Select One', selected: selected_brand(device) %>
+    <div class="field">
+      <div class="select-wrapper">
       <%= f.label :brand %>
+      <select name="device[brand]" class="browser-default">
+        <% select_brand.each do |label, value| %>
+          <option value=<%= value %> <%=selected?(device, value)%>><%= label %></option>
+        <% end %>
+      </select>
+      </div>
     </div>
   </div>
+
+  <div class="row"></div>
 
   <div class="row">
     <div class="field input-field">
