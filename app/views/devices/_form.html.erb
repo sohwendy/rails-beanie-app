@@ -11,78 +11,64 @@
   <% end %>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.text_field :name %>
-      <%= f.label :name %>
-    </div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="row">
-    <div class="field">
-      <div class="select-wrapper">
+    <div class="select-wrapper">
       <%= f.label :brand %>
-      <select name="device[brand]" class="browser-default">
+      <select name="device[brand]" class="browser-default bean-select-field">
         <% select_brand.each do |label, value| %>
           <option value=<%= value %> <%=selected?(device, value)%>><%= label %></option>
         <% end %>
       </select>
-      </div>
     </div>
   </div>
 
   <div class="row"></div>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.label :model %>
-      <%= f.text_field :model %>
-    </div>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
   </div>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.label :operating_system %>
-      <br>
-      <%= f.collection_radio_buttons(:operating_system, Device::OSS, :first, :last) do |b| %>
-        <p>
-          <%= b.radio_button(class: 'with-gap') %>
-          <%= b.label %>
-        </p>
-      <% end %>
-    </div>
+    <%= f.label :operating_system %>
+    <br>
+    <%= f.collection_radio_buttons(:operating_system, Device::OSS, :first, :last) do |b| %>
+      <p>
+        <%= b.radio_button(class: 'with-gap') %>
+        <%= b.label %>
+      </p>
+    <% end %>
   </div>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.label :users %>
-      <br>
-      <%= f.collection_check_boxes(:users, Device::USERS, :first, :last) do |b| %>
-        <p>
-          <%= b.check_box(class: 'filled-in') %>
-          <%= b.label %>
-        </p>
-      <% end %>
-    </div>
+    <%= f.label :users %>
+    <br>
+    <%= f.collection_check_boxes(:users, Device::USERS, :first, :last) do |b| %>
+      <p>
+        <%= b.check_box(class: 'filled-in') %>
+        <%= b.label %>
+      </p>
+    <% end %>
   </div>
 
   <br>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.label :purchase_date %>
-      <%= f.date_field :purchase_date, class: 'datepicker', value: display_purchase_date(device) %>
-    </div>
+    <%= f.label :purchase_date %>
+    <%= f.date_field :purchase_date, class: 'datepicker', value: display_purchase_date(device) %>
   </div>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.label :udid %>
-      <%= f.text_field :udid %>
-    </div>
+    <%= f.label :udid %>
+    <%= f.text_field :udid %>
   </div>
 
   <div class="row">
-    <div class="field file-field input-field">
+    <div class="field file-field">
       <div class="btn indigo">
         <span><i class="material-icons left">attach_file</i>Attach File</span>
         <%= f.file_field :photo %>
