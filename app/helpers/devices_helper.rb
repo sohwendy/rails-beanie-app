@@ -52,6 +52,6 @@ module DevicesHelper
 
   def render_icon_link(icon, text, path, options = {})
     id = options[:id] || "link-#{text || icon}"
-    link_to "<i class='material-icons'>#{icon}</i>".html_safe, path, class: 'waves-effect waves-teal', id: id
+    link_to "<i class='material-icons' id='#{id}-i'>#{icon}</i>".html_safe, path, class: 'waves-effect waves-teal', id: id
   end
 end
