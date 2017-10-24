@@ -14,7 +14,15 @@ class DevicesController < ApplicationController
 
   # GET /devices/new
   def new
-    @device = Device.new
+    if Device.count >= 25
+      @devices = Device.all
+      respond_to do |format|
+        format.html { redirect_to devices_url, notice: 'Reached max 25 records. Delete devices before creating new ones.' }
+        format.json { head :method_not_allowed }
+      end
+    else
+      @device = Device.new
+    end
   end
 
   # GET /devices/1/edit

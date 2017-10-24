@@ -24,6 +24,16 @@ RSpec.describe DevicesController, type: :controller do
       get :new, params: {}
       expect(assigns(:device)).to be_a_new(Device)
     end
+
+    it 'redirects to index when max records created' do
+      (25 - Device.count).times do |_|
+        create(:device_one)
+      end
+
+      get :new, params: {}
+      expect(response).to redirect_to(devices_url)
+    end
+
   end
 
   describe 'GET #edit' do
