@@ -1,7 +1,14 @@
 <h1>Devices Record App</h1>
 
 <div class="row">
-  <%= render_button_link('add', 'Add New Device', new_device_path, style: 'right') %>
+  <% if @devices.count < 25 %>
+    <%= render_button_link('add', 'Add New Device', new_device_path, style: 'right') %>
+  <% end %>
+  <% if @devices.count >= 25 %>
+    <div class="card-panel light-blue darken-4">
+      <span class="blue-grey-text text-lighten-5">Max 25 records allowed.</span>
+    </div>
+  <% end %>
 </div>
 <div class="row">
   <table class="mdl-data-table mdl-js-data-table highlight" id="table-listing">
