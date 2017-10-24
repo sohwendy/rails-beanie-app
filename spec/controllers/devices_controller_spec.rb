@@ -1,6 +1,12 @@
 require 'rails_helper'
+require 'support/auth_helper'
 
 RSpec.describe DevicesController, type: :controller do
+  include AuthHelper
+  before(:each) do
+    http_login
+  end
+
   subject { create(:device_one) }
   let(:valid_attributes) { FactoryGirl.attributes_for(:device_one) }
   let(:invalid_attributes) { FactoryGirl.attributes_for(:device_one, name: '') }
