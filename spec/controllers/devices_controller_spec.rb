@@ -8,8 +8,8 @@ RSpec.describe DevicesController, type: :controller do
   end
 
   subject { create(:device_one) }
-  let(:valid_attributes) { FactoryGirl.attributes_for(:device_one) }
-  let(:invalid_attributes) { FactoryGirl.attributes_for(:device_one, name: '') }
+  let(:valid_attributes) { FactoryBot.attributes_for(:device_one) }
+  let(:invalid_attributes) { FactoryBot.attributes_for(:device_one, name: '') }
 
   describe 'GET #index' do
     it 'assigns all Device as @devices' do
@@ -85,7 +85,7 @@ RSpec.describe DevicesController, type: :controller do
   describe 'PUT #update' do
     context 'with valid params' do
       before(:each) { subject { create(:device_one) } }
-      let(:new_attributes) { FactoryGirl.attributes_for(:device_one, name: 'Nexus') }
+      let(:new_attributes) { FactoryBot.attributes_for(:device_one, name: 'Nexus') }
 
       it 'updates the requested device' do
         put :update, params: {id: subject.to_param, device: new_attributes}

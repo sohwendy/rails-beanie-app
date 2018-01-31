@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :device_one, class: Device do
     name 'Exploding'
     brand 'samsung'
