@@ -15,4 +15,4 @@
 spec/feature/*
 logfile
 
-/public/system/devices
+public/*

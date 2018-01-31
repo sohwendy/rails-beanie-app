@@ -5,7 +5,7 @@ class CreateDevices < ActiveRecord::Migration[5.0]
       t.string :brand
       t.string :model
       t.string :operating_system
-      t.string :users, array: true, default: []
+      t.string :users, array: true, default: [].to_yaml
       t.string :udid
       t.date :purchase_date
       t.attachment :photo

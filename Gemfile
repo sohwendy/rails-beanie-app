@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.2.4"
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'pg', '~> 0.18'
+gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.2.1'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'wdm', '>0.1.0' if Gem.win_platform?
 
 group :development, :test do
   gem 'byebug', platform: :mri

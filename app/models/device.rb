@@ -1,4 +1,8 @@
 class Device < ApplicationRecord
+
+  # for windows
+  serialize :users
+
   USERS = [['ux', 'Usability Lab'], ['dev', 'Project'], ['demo', 'Showcase']]
   OSS = { ios: 'iOS', android: 'Android', others: 'Other OS'}
   BRAND = [['Apple', 'apple'], ['Samsung', 'samsung'], ['LG', 'lg']]
